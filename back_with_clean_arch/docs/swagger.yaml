@@ -1,0 +1,291 @@
+basePath: /
+definitions:
+  entity.AuthResponse:
+    properties:
+      accessToken:
+        type: string
+      refreshToken:
+        type: string
+      user:
+        $ref: '#/definitions/entity.User'
+    type: object
+  entity.Task:
+    properties:
+      createdDate:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+      endTime:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+      id:
+        example: "1"
+        type: string
+      name:
+        example: Task 1
+        type: string
+      notes:
+        example: Description of task 1
+        type: string
+      order:
+        example: 1
+        type: integer
+      priority:
+        example: 1
+        type: integer
+      startTime:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+      status:
+        example: 0
+        type: integer
+      updatedDate:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+      userId:
+        example: 47e0ae97-b63a-4d92-8a03-7e99b4cc99cd
+        type: string
+    type: object
+  entity.User:
+    properties:
+      created_at:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+      email:
+        example: example@xyz.xyz
+        type: string
+      id:
+        example: "1"
+        type: string
+      password:
+        example: Password@123
+        type: string
+      username:
+        example: John Doe
+        type: string
+    type: object
+  routes.loginRequest:
+    properties:
+      email:
+        example: example@xyz.xyz
+        type: string
+      password:
+        example: Password@123
+        type: string
+    type: object
+  routes.registerRequest:
+    properties:
+      email:
+        example: example@xyz.xyz
+        type: string
+      password:
+        example: Password@123
+        type: string
+      username:
+        example: example
+        type: string
+    type: object
+  routes.taskPostRequest:
+    properties:
+      endTime:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+      name:
+        example: Task 1
+        type: string
+      order:
+        example: 0
+        type: integer
+      priority:
+        example: 0
+        type: integer
+      startTime:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+    type: object
+  routes.taskPutRequest:
+    properties:
+      endTime:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+      name:
+        example: Task 1
+        type: string
+      order:
+        example: 0
+        type: integer
+      priority:
+        example: 0
+        type: integer
+      startTime:
+        example: "2021-10-10T10:00:00Z"
+        type: string
+      status:
+        example: 0
+        type: integer
+    type: object
+  routes.tasksResponse:
+    properties:
+      tasks:
+        items:
+          $ref: '#/definitions/entity.Task'
+        type: array
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: k_nyssanov@kbtu.kz
+    name: Kakimbek Nyssanov
+    url: t.me/kakimnsnv
+  description: This is a simple tasks API
+  title: Tasks API
+  version: "1.0"
+paths:
+  /v1/auth/login:
+    post:
+      consumes:
+      - application/json
+      description: Login
+      parameters:
+      - description: Login request
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/routes.loginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/entity.AuthResponse'
+        "400":
+          description: invalid request
+          schema:
+            type: string
+        "401":
+          description: invalid email or password
+          schema:
+            type: string
+      summary: Login
+      tags:
+      - auth
+  /v1/auth/register:
+    post:
+      consumes:
+      - application/json
+      description: Register
+      parameters:
+      - description: Register request
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/routes.registerRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/entity.AuthResponse'
+        "400":
+          description: invalid request
+          schema:
+            type: string
+        "500":
+          description: internal server error
+          schema:
+            type: string
+      summary: Register
+      tags:
+      - auth
+  /v1/tasks:
+    get:
+      consumes:
+      - application/json
+      description: should return all tasks
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/routes.tasksResponse'
+      security:
+      - ApiKeyAuth: []
+      summary: Get tasks
+      tags:
+      - tasks
+    post:
+      consumes:
+      - application/json
+      description: should create a task
+      parameters:
+      - description: Task object
+        in: body
+        name: task
+        required: true
+        schema:
+          $ref: '#/definitions/routes.taskPostRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+      security:
+      - ApiKeyAuth: []
+      summary: Create task
+      tags:
+      - tasks
+  /v1/tasks/{id}:
+    delete:
+      description: should delete a task
+      parameters:
+      - description: Task ID
+        in: path
+        name: id
+        required: true
+        type: string
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Delete task
+      tags:
+      - tasks
+    put:
+      consumes:
+      - application/json
+      description: should update a task
+      parameters:
+      - description: Task ID
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Task object
+        in: body
+        name: task
+        required: true
+        schema:
+          $ref: '#/definitions/routes.taskPutRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      security:
+      - ApiKeyAuth: []
+      summary: Update task
+      tags:
+      - tasks
+schemes:
+- http
+securityDefinitions:
+  ApiKeyAuth:
+    in: header
+    name: Authorization
+    type: apiKey
+swagger: "2.0"

@@ -1,0 +1,40 @@
+version: '3.9'
+services:
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+    environment:
+      # POSTGRES_USER: 'user'
+      POSTGRES_USER: 'kakimbekn'
+      # POSTGRES_PASSWORD: 'pass'
+      POSTGRES_PASSWORD: 'Sadasa2015'
+      POSTGRES_DB: 'golang-kbtu'
+    ports:
+      - 5434:5432
+
+
+  app:
+    build: .
+    container_name: app
+    image: app
+    environment:
+      PG_URL: 'postgres://kakimbekn:Sadasa2015@localhost:5434/golang-kbtu'
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+
+  # integration:
+  #   build:
+  #     context: .
+  #     dockerfile: integration-test/Dockerfile
+  #   container_name: integration
+  #   image: integration
+  #   depends_on:
+  #     - app
+
+volumes:
+  pg-data:

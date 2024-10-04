@@ -1,0 +1,139 @@
+{
+    "toDoGo": "To Do Go",
+    "next": "next",
+    "skip": "skip",
+    "onBoarding1": "onBoarding1",
+    "onBoarding1_1": "onBoarding1_1",
+    "onBoarding2": "onBoarding2",
+    "onBoarding2_1": "onBoarding2_1",
+    "onBoarding3": "onBoarding3",
+    "onBoarding3_1": "onBoarding3_1",
+    "youCanSignInThrought": "Вы можете войти в систему через:",
+    "proceedingYouAgree": "Продолжая, вы принимаете ",
+    "proceedingYouAgree1": "условия и предложения ",
+    "signInWithEmail": "Войти через email",
+    "google": "Google",
+    "apple": "Apple",
+    "registration": "Регистрация",
+    "fullName": "Ваше ФИО",
+    "phoneNumber": "Номер телефона",
+    "enterFullName": "Введите ваше ФИО",
+    "enterPhoneNumber": "Введите номер телефона",
+    "email": "Ваше ФИО",
+    "password": "Номер телефона",
+    "confirmPassword": "Введите ваше ФИО",
+    "enterEmail": "Введите номер телефона",
+    "enterPassword": "Введите номер телефона",
+    "enterConfimationPassword": "Введите номер телефона",
+    "register": "Зарегистрироваться",
+    "or": "или",
+    "start": "start",
+    "tasksListEmpty": "tasksListEmpty",
+    "addTaskManually": "addTaskManually",
+    "home": "home",
+    "achievement": "achievement",
+    "share": "share",
+    "profile": "profile",
+    "addTask": "addTask",
+    "name": "name",
+    "enterName": "enterName",
+    "date": "date",
+    "areYouSureYouWantToDelete": "Вы уверены, что хотите удалить?",
+    "yes": "Да",
+    "no": "Нет",
+    "error": "Ошибка",
+    "registrationError": "Ошибка регистрации",
+    "loginError": "Ошибка входа",
+    "enterDate": "enterDate",
+    "begining": "begining",
+    "end": "end",
+    "prioritet": "prioritet",
+    "low": "low",
+    "mid": "mid",
+    "high": "high",
+    "save": "save",
+    "planningFinished": "planningFinished",
+    "planningFinished_1": "planningFinished_1",
+    "addTaskByAI": "addTaskByAI",
+    "hello": "hello",
+    "aiTaskAddQuestion": "aiTaskAddQuestion",
+    "pressButtonAndSpeak": "pressButtonAndSpeak",
+    "recordAgain": "recordAgain",
+    "yourPlansFor": "yourPlansFor {date}:",
+    "@yourPlansFor": {
+        "placeholders": {
+            "date": {
+                "type": "DateTime",
+                "format": "d MMMM",
+                "isCustomDateFormat": "true"
+            }
+        }
+    },
+    "checkAITasks": "checkAITasks",
+    "thereMightBeADescription": "thereMightBeADescription",
+    "addAllTasks": "addAllTasks",
+    "add": "add",
+    "edit": "edit",
+    "remove": "remove",
+    "cancel": "cancel",
+    "ok": "ok",
+    "addedSuccessfully": "addedSuccessfully",
+    "editedSuccessfully": "editedSuccessfully",
+    "youCanAlwaysMakeChanges": "youCanAlwaysMakeChanges",
+    "removed": "removed",
+    "time": "time",
+    "tasksList": "tasksList",
+    "settings": "settings",
+    "notifications": "notifications",
+    "userAgreement": "userAgreement",
+    "userAgreementText": "userAgreementText",
+    "language": "language",
+    "exitAccount": "exitAccount",
+    "kaz": "kaz",
+    "rus": "rus",
+    "eng": "eng",
+    "kazakh": "kazakh",
+    "russian": "russian",
+    "english": "english",
+    "understand": "understand",
+    "getMonth": "{dateTime}",
+    "@getMonth": {
+        "placeholders": {
+            "dateTime": {
+                "type": "DateTime",
+                "format": "MMMM",
+                "isCustomDateFormat": "true"
+            }
+        }
+    },
+    "getddMMyyyy": "{dateTime}",
+    "@getddMMyyyy": {
+        "placeholders": {
+            "dateTime": {
+                "type": "DateTime",
+                "format": "dd.MM.yyyy",
+                "isCustomDateFormat": "true"
+            }
+        }
+    },
+    "getTime": "{dateTime}",
+    "@getTime": {
+        "placeholders": {
+            "dateTime": {
+                "type": "DateTime",
+                "format": "HH:mm",
+                "isCustomDateFormat": "true"
+            }
+        }
+    },
+    "getDOW": "{dateTime}",
+    "@getDOW": {
+        "placeholders": {
+            "dateTime": {
+                "type": "DateTime",
+                "format": "E",
+                "isCustomDateFormat": "true"
+            }
+        }
+    }
+}

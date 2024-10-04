@@ -1,0 +1,18 @@
+basePath: /
+consumes:
+- application/json
+host: localhost:8080
+info:
+  contact:
+    email: k_nyssanov@kbtu.kz
+    name: Kakimbek Nyssanov
+    url: t.me/kakimnsnv
+  description: This is a simple tasks API
+  title: Tasks API
+  version: "1.0"
+paths: {}
+produces:
+- application/json
+schemes:
+- http
+swagger: "2.0"

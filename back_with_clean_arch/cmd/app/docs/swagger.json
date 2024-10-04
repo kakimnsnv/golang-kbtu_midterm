@@ -1,0 +1,25 @@
+{
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a simple tasks API",
+        "title": "Tasks API",
+        "contact": {
+            "name": "Kakimbek Nyssanov",
+            "url": "t.me/kakimnsnv",
+            "email": "k_nyssanov@kbtu.kz"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/",
+    "paths": {}
+}
